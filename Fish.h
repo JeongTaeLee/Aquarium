@@ -23,6 +23,8 @@ protected:
 	RECT				m_rect;
 	int					m_frameCount;
 
+	float				m_xPos;
+
 	bool				m_rotate;
 public:
 	CFish();

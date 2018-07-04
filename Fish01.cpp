@@ -1,10 +1,14 @@
 #include "DXUT.h"
 #include "Fish01.h"
 
-CFish01::CFish01()
+CFish01::CFish01(const wstring & key, float xPos, float yPos, float ban)
 {
-	CFish::Init(L"Fish01", D3DXVECTOR2((float)WINWIDTH / 2, (float)WINHEIGHT / 2));
+	CFish::Init(key, D3DXVECTOR2((float)WINWIDTH / 2, (float)WINHEIGHT / 2));
 
+	m_xPos = xPos;
+	m_pos.y = yPos;
+
+	this->ban = ban;
 }
 
 
@@ -74,14 +78,19 @@ void CFish01::Move()
 	static float angle = 0;
 	static float oldAngle = 0;
 	
-	angle += 0.01;
+	int random = rand() % 2;
+
+	if (random == 1)
+		angle += 0.001;
+	else
+		angle += 0.008;
 
 	if (angle > D3DX_PI * 2)
 		angle = 0.0f;
 
 	float sinAngle = sin(angle);
 
-	m_pos.x = (sinAngle * 300) + 640;
+	m_pos.x = (sinAngle * ban) + m_xPos;
 
 	if (m_state == FISHSTATES::RIGHT && sinAngle < oldAngle)
 	{
