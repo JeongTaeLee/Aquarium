@@ -3,10 +3,11 @@
 
 #include "BackGround.h"
 
-#include "Fish.h"
 #include "Fish01.h"
+#include "CircleFish.h"
 
 MainGame::MainGame(){
+	m_CreateTime = 0;
 }
 
 
@@ -21,11 +22,12 @@ void MainGame::Init()
 	backGround = new CBackGround;
 	backGround->Init();
 
-	m_fishList.push_back(new CFish01(L"Fish01", 200, 50, 100));
-	m_fishList.push_back(new CFish01(L"Fish02", 700, 150, 200));
-	m_fishList.push_back(new CFish01(L"Fish01", 500, 250, 400));
-	m_fishList.push_back(new CFish01(L"Fish02", 900, 350, 100));
-	m_fishList.push_back(new CFish01(L"Fish02", 100, 450, 50));
+	m_fishList.push_back(new CFish01(L"Fish02", D3DXVECTOR2(WINWIDTH / 2, WINHEIGHT / 2), 150, false));
+	m_fishList.push_back(new CFish01(L"Fish02", D3DXVECTOR2(WINWIDTH / 2, WINHEIGHT / 2), 150, true));
+
+
+	m_fishList.push_back(new CFish01(L"Fish01", D3DXVECTOR2(100, WINHEIGHT / 2), 320, true));
+	m_fishList.push_back(new CFish01(L"Fish02", D3DXVECTOR2(1180, WINHEIGHT / 2), 320, true));
 }
 
 void MainGame::Release()
@@ -44,6 +46,20 @@ void MainGame::Release()
 void MainGame::Update()
 {
 	backGround->Update();
+
+	if (m_fishList.size() < 66)
+	{
+		if (timeGetTime() > m_CreateTime)
+		{
+			m_CreateTime = timeGetTime() + 400;
+
+			m_fishList.push_back(new CCircleFish(L"Fish01", D3DXVECTOR2(WINWIDTH / 2, WINHEIGHT / 2), 200));
+			m_fishList.push_back(new CCircleFish(L"Fish02", D3DXVECTOR2(WINWIDTH / 2, WINHEIGHT / 2), 300));
+		}
+	}
+
+	
+
 
 	for (auto Iter : m_fishList)
 	{

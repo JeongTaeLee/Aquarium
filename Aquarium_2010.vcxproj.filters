@@ -21,17 +21,20 @@
     <Filter Include="Object\BackGround">
       <UniqueIdentifier>{d5ac9146-69e0-484f-9854-bffe3922eaf4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Manager">
-      <UniqueIdentifier>{2842b782-b0c2-404a-9216-e2f713ba047d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Manager\ImageManager">
-      <UniqueIdentifier>{a5e6b1e5-ea0c-45cf-8f30-12ca4974e598}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Object\fish">
       <UniqueIdentifier>{e9233cad-c732-404b-980b-405e49e246ce}</UniqueIdentifier>
     </Filter>
     <Filter Include="Object\fish\Fish01">
       <UniqueIdentifier>{fc282ddb-0fd4-4843-ba4e-38613c3113c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\fish\CircleFish">
+      <UniqueIdentifier>{b28aa63e-d18b-4f42-bd28-19d5b8c56a1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ImageManager">
+      <UniqueIdentifier>{a5e6b1e5-ea0c-45cf-8f30-12ca4974e598}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager">
+      <UniqueIdentifier>{2842b782-b0c2-404a-9216-e2f713ba047d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -102,13 +105,16 @@
       <Filter>Object\BackGround</Filter>
     </ClCompile>
     <ClCompile Include="ImageManager.cpp">
-      <Filter>Manager\ImageManager</Filter>
+      <Filter>ImageManager</Filter>
     </ClCompile>
     <ClCompile Include="Fish.cpp">
       <Filter>Object\fish</Filter>
     </ClCompile>
     <ClCompile Include="Fish01.cpp">
       <Filter>Object\fish\Fish01</Filter>
+    </ClCompile>
+    <ClCompile Include="CircleFish.cpp">
+      <Filter>Object\fish\CircleFish</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -129,13 +135,16 @@
       <Filter>Manager</Filter>
     </ClInclude>
     <ClInclude Include="ImageManager.h">
-      <Filter>Manager\ImageManager</Filter>
+      <Filter>ImageManager</Filter>
     </ClInclude>
     <ClInclude Include="Fish.h">
       <Filter>Object\fish</Filter>
     </ClInclude>
     <ClInclude Include="Fish01.h">
       <Filter>Object\fish\Fish01</Filter>
+    </ClInclude>
+    <ClInclude Include="CircleFish.h">
+      <Filter>Object\fish\CircleFish</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

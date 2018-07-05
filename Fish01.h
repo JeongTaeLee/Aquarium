@@ -4,10 +4,17 @@ class CFish01 :
 	public CFish
 {
 private:
-	int ban;
+	D3DXVECTOR2 Benchmark;
+
+	float r;
+
+	float angle = 0;
+	float oldAngle = 0;
+
+	bool s;
 public:
 
-	CFish01(const wstring & key, float xPos, float yPos, float ban);
+	CFish01(const wstring & key, const D3DXVECTOR2 & Benchmark, float r, bool s);
 	~CFish01();
 
 	virtual void Release()	override;

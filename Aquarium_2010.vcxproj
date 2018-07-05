@@ -385,11 +385,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BackGround.cpp" />
+    <ClCompile Include="CircleFish.cpp" />
     <ClCompile Include="Fish.cpp" />
     <ClCompile Include="Fish01.cpp" />
     <ClCompile Include="ImageManager.cpp" />
     <ClCompile Include="MainGame.cpp" />
     <ClInclude Include="BackGround.h" />
+    <ClInclude Include="CircleFish.h" />
     <ClInclude Include="Fish.h" />
     <ClInclude Include="Fish01.h" />
     <ClInclude Include="ImageManager.h" />

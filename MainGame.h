@@ -10,6 +10,8 @@ private:
 	CBackGround * backGround;
 
 	vector<CFish*> m_fishList;
+
+	DWORD	m_CreateTime;
 public:
 	MainGame();
 	~MainGame();
